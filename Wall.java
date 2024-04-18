@@ -12,6 +12,12 @@ public class Wall extends Actor
      * Act - do whatever the Wall wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Wall() {
+        GreenfootImage wallImage = new GreenfootImage(30, 30);
+        wallImage.setColor(Color.GRAY);
+        wallImage.fill();
+        setImage(wallImage);
+    }
     public void act()
     {
         // Add your action code here.
