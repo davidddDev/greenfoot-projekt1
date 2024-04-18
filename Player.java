@@ -15,9 +15,36 @@ public class Player extends Actor
     private int lives = 3;
     public void act()
     {
-        // Add your action code here.
+        movement();
+        shooting();
     }
      public void setLives(int numLives) {
         lives = numLives; // Nastaví počet životů
+    }
+    public void movement()
+    {
+        int moveX = 0, moveY = 0;
+        if (Greenfoot.isKeyDown("A"))  moveX -= 5; 
+        if (Greenfoot.isKeyDown("D")) moveX += 5; 
+        if (Greenfoot.isKeyDown("W"))    moveY -= 5;
+        if (Greenfoot.isKeyDown("S"))  moveY += 5;
+        this.setLocation(this.getX()+moveX, this.getY()+moveY);
+        
+        MouseInfo mi = Greenfoot.getMouseInfo();
+        if (mi != null)
+        {
+            int miX = mi.getX();
+            int miY = mi.getY();
+            turnTowards(miX, miY);
+        }
+    }
+    public void shooting()
+    {
+        if (Greenfoot.mouseClicked(null))
+        {
+            Bullet bullet = new Bullet();
+            getWorld().addObject(bullet, getX(), getY());
+            bullet.setRotation(getRotation());
+        }
     }
 }
