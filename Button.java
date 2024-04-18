@@ -33,7 +33,7 @@ public class Button extends Actor
             }
             else if (text.equals("Hard"))
             {
-                Greenfoot.setWorld(new GameWorld(1)); // Spustí hru s 1 životem pro těžkou obtížnost
+                Greenfoot.setWorld(new GameWorld(1)); // Spustí hru s 1 životem pro těžkou obtížnos
             }
         }
     }
