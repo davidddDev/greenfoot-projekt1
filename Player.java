@@ -13,6 +13,7 @@ public class Player extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int lives = 3;
+    private int ammo = 5;
     public void act()
     {
         movement();
@@ -24,10 +25,10 @@ public class Player extends Actor
     public void movement()
     {
         int moveX = 0, moveY = 0;
-        if (Greenfoot.isKeyDown("A"))  moveX -= 5; 
+        if (Greenfoot.isKeyDown("A")) moveX -= 5; 
         if (Greenfoot.isKeyDown("D")) moveX += 5; 
-        if (Greenfoot.isKeyDown("W"))    moveY -= 5;
-        if (Greenfoot.isKeyDown("S"))  moveY += 5;
+        if (Greenfoot.isKeyDown("W")) moveY -= 5;
+        if (Greenfoot.isKeyDown("S")) moveY += 5;
         this.setLocation(this.getX()+moveX, this.getY()+moveY);
         
         MouseInfo mi = Greenfoot.getMouseInfo();
@@ -42,9 +43,24 @@ public class Player extends Actor
     {
         if (Greenfoot.mouseClicked(null))
         {
-            Bullet bullet = new Bullet();
-            getWorld().addObject(bullet, getX(), getY());
-            bullet.setRotation(getRotation());
+            if (munition() == true)
+            {
+                Bullet bullet = new Bullet();
+                getWorld().addObject(bullet, getX(), getY());
+                bullet.setRotation(getRotation());
+                ammo--;
+            }
+        }
+    }
+    public boolean munition()
+    {
+        if(ammo > 0)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
         }
     }
 }
