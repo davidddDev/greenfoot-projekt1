@@ -13,11 +13,12 @@ public class Wall extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Wall() {
-        GreenfootImage wallImage = new GreenfootImage(30, 30);
+        GreenfootImage wallImage = new GreenfootImage(40, 40);
         wallImage.setColor(Color.GRAY);
         wallImage.fill();
         setImage(wallImage);
     }
+
     public void act()
     {
         // Add your action code here.

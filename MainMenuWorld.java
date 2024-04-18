@@ -16,5 +16,20 @@ public class MainMenuWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 600, 1); 
+        prepare();
+    }
+
+    private void prepare()
+    {
+        Button easyButton = new Button("Easy");
+        addObject(easyButton, 100, 100);
+
+        Button mediumButton = new Button("Medium");
+        addObject(mediumButton, 300, 100);
+
+        Button hardButton = new Button("Hard");
+        addObject(hardButton, 500, 100);
+
     }
 }
+
