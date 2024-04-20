@@ -1,5 +1,4 @@
 import greenfoot.*;
-
 public class Bullet extends Actor {
     private int speed = 5;
     private int damage;

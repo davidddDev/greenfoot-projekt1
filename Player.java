@@ -15,6 +15,7 @@ public class Player extends Actor {
         }
         this.weaponLevel = 1;
         this.coins = 0;
+
     }
 
     public void act() {
@@ -90,5 +91,5 @@ public class Player extends Actor {
     public int getHealth() {
         return health;
     }
-}
 
+}
