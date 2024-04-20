@@ -11,7 +11,7 @@ public class Button extends Actor {
     }
 
     private void updateImage() {
-        GreenfootImage image = new GreenfootImage(text + " - Click to start", 24, Color.WHITE, Color.BLACK);
+        GreenfootImage image = new GreenfootImage(text + " - Click to start", 25, new Color(193, 133, 98, 200), new Color(0, 0, 0, 0));
         setImage(image);
     }
 
