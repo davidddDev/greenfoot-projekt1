@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Monster1 extends Actor
 {
+    int speed;
+    int lives;
     /**
      * Act - do whatever the Monster1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,8 +17,14 @@ public class Monster1 extends Actor
     public void act()
     {
         followPlayer();
-        move(5);
+        move(speed);
         shot();
+        health();
+    }
+    public Monster1(int speed, int lives)
+    {
+        this.speed = speed; // Nastaví rychlost pohybu
+        this.lives = lives; // Nastaví počet životů
     }
     private void followPlayer()
     {
@@ -42,6 +50,14 @@ public class Monster1 extends Actor
     {
         Bullet intersectingBullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if (intersectingBullet != null)
+        {
+            lives--;
+            removeTouching(Bullet.class);
+        }
+    }
+    public void health()
+    {
+        if(lives == 0)
         {
             getWorld().removeObject(this);
         }
