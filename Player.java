@@ -52,7 +52,7 @@ public class Player extends Actor
             }
         }
     }
-    public boolean munition()
+    public boolean munition() // kontroluje munici
     {
         if(ammo > 0)
         {
