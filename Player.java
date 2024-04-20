@@ -4,6 +4,7 @@ public class Player extends Actor {
     private int health;
     private int coins;
     private int weaponLevel;
+    private int ammo = 5;
 
     public Player(int difficulty) {
         if (difficulty == 1) {
@@ -52,9 +53,25 @@ public class Player extends Actor {
 
     private void shoot() {
         if (Greenfoot.mouseClicked(null)) {
-            Bullet bullet = new Bullet(getRotation(), weaponLevel);
-            getWorld().addObject(bullet, getX(), getY());
-            bullet.move(50);
+            if (munition() == true) {
+                Bullet bullet = new Bullet(getRotation(), weaponLevel);
+                getWorld().addObject(bullet, getX(), getY());
+                bullet.move(50);
+                bullet.setRotation(getRotation());
+                ammo--;
+            }
+        }
+    }
+
+    public boolean munition()
+    {
+        if(ammo > 0)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
         }
     }
 
@@ -79,8 +96,8 @@ public class Player extends Actor {
 
     private void checkForUpgrade() {
         if (Greenfoot.isKeyDown("u") && coins >= 10) { // Press 'U' to upgrade
-        weaponLevel++;
-        coins -= 10;
+            weaponLevel++;
+            coins -= 10;
         }
     }
 
