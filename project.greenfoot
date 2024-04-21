@@ -1,7 +1,7 @@
 #Greenfoot project file
-class.Dungeon.image=f230bf83-f87e-42e1-a74e-0f71cd65e3d7.jpg
+class.Dungeon.image=lvl1.png
 class.MainMenu.image=mainmenu.png
-class.Player.image=bee.png
+class.Player.image=player-bow\ frontview.png
 dependency1.from=MainMenu
 dependency1.to=Button
 dependency1.type=UsesDependency
@@ -36,7 +36,7 @@ editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=552
 editor.fx.0.y=100
-height=1100
+height=1056
 package.numDependencies=10
 package.numTargets=14
 project.charset=UTF-8
@@ -152,7 +152,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1940
+width=1936
 world.lastInstantiated=MainMenu
 xPosition=0
 yPosition=0
