@@ -6,6 +6,11 @@ public class Player extends Actor {
     private int weaponLevel;
     private int ammo = 5;
 
+    private GreenfootImage imageBackView;
+    private GreenfootImage imageRightBow;
+    private GreenfootImage imageLeftBow;
+    private GreenfootImage imageFrontBow;
+
     public Player(int difficulty) {
         if (difficulty == 1) {
             this.health = 5;
@@ -16,7 +21,11 @@ public class Player extends Actor {
         }
         this.weaponLevel = 1;
         this.coins = 0;
-
+        imageBackView = new GreenfootImage("player-backview.png");
+        imageFrontBow = new GreenfootImage("player-bow-frontview.png");
+        imageLeftBow = new GreenfootImage("player-bow-leftview.png");
+        imageRightBow =new GreenfootImage("player-bow-rightview.png");
+        setImage(imageFrontBow);
     }
 
     public void act() {
@@ -25,6 +34,22 @@ public class Player extends Actor {
         checkCollision();
         checkForUpgrade();
         moveToMouse();
+        updateImageBasedOnRotation();
+    }
+
+    private void updateImageBasedOnRotation() {
+        int rotation = getRotation();
+        if (rotation >=0 && rotation <= 50) { 
+            setImage(imageRightBow);
+        } else if (rotation >=131 && rotation <=220) {
+            setImage(imageLeftBow);
+        } else if (rotation >=51 && rotation <= 130){
+            setImage(imageFrontBow);
+        } else if (rotation >=221 && rotation <=310) {
+            setImage(imageBackView);
+        } else {
+            setImage(imageRightBow);
+        }
     }
 
     private void moveAround() {
