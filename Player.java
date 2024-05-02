@@ -6,10 +6,20 @@ public class Player extends Actor {
     private int weaponLevel;
     private int ammo = 5;
 
+    // obrázky
     private GreenfootImage imageBackView;
     private GreenfootImage imageRightBow;
     private GreenfootImage imageLeftBow;
     private GreenfootImage imageFrontBow;
+
+    private GreenfootImage imageFrontGunOne;
+    private GreenfootImage imageRightGunOne;
+    private GreenfootImage imageLeftGunOne;
+
+    private GreenfootImage imageFrontGunTwo;
+    private GreenfootImage imageRightGunTwo;
+    private GreenfootImage imageLeftGunTwo;
+    // obrázky 
 
     public Player(int difficulty) {
         if (difficulty == 1) {
@@ -20,12 +30,24 @@ public class Player extends Actor {
             this.health = 1;
         }
         this.weaponLevel = 1;
-        this.coins = 0;
+        this.coins = 20;
+
+        // obrázky
+        setImage(imageFrontBow);
         imageBackView = new GreenfootImage("player-backview.png");
         imageFrontBow = new GreenfootImage("player-bow-frontview.png");
         imageLeftBow = new GreenfootImage("player-bow-leftview.png");
         imageRightBow =new GreenfootImage("player-bow-rightview.png");
-        setImage(imageFrontBow);
+
+        imageFrontGunOne = new GreenfootImage("player-gun-frontview.png");
+        imageRightGunOne = new GreenfootImage("player-gun-rightview.png");
+        imageLeftGunOne = new GreenfootImage("player-gun-leftview.png");
+
+        imageFrontGunTwo = new GreenfootImage("player-gun2-frontview.png");
+        imageRightGunTwo = new GreenfootImage("player-gun2-rightview.png");
+        imageLeftGunTwo = new GreenfootImage("player-gun2-leftview.png");
+        //obrázky 
+
     }
 
     public void act() {
@@ -35,21 +57,6 @@ public class Player extends Actor {
         checkForUpgrade();
         moveToMouse();
         updateImageBasedOnRotation();
-    }
-
-    private void updateImageBasedOnRotation() {
-        int rotation = getRotation();
-        if (rotation >=0 && rotation <= 50) { 
-            setImage(imageRightBow);
-        } else if (rotation >=131 && rotation <=220) {
-            setImage(imageLeftBow);
-        } else if (rotation >=51 && rotation <= 130){
-            setImage(imageFrontBow);
-        } else if (rotation >=221 && rotation <=310) {
-            setImage(imageBackView);
-        } else {
-            setImage(imageRightBow);
-        }
     }
 
     private void moveAround() {
@@ -110,7 +117,20 @@ public class Player extends Actor {
 
     public void loseHealth() {
         health--;
+        if (health == 4) {
+            // vymazání 5. obrázku srdce
+        }
+        if (health == 3) {
+            // vymazání 4. obrázku srdce
+        }
+        if (health == 2) {
+            // vymazání 3. obrázku srdce
+        }
+        if (health == 1) {
+            // vymazání 2. obrázku srdce
+        }
         if (health <= 0) {
+            // vymazání 1. obrázku srdce 
             die();
         }
     }
@@ -120,7 +140,7 @@ public class Player extends Actor {
     }
 
     private void checkForUpgrade() {
-        if (Greenfoot.isKeyDown("u") && coins >= 10) { // Press 'U' to upgrade
+        if (Greenfoot.isKeyDown("u") && coins >= 10) { // zmáčknout u na up grade zbraně
             weaponLevel++;
             coins -= 10;
         }
@@ -134,4 +154,47 @@ public class Player extends Actor {
         return health;
     }
 
+    private void updateImageBasedOnRotation() { // obrázky postavy (měnění podle úhlu pohledu) 
+        int rotation = getRotation();
+        if (weaponLevel == 1)
+        {
+            if (rotation >=0 && rotation <= 50) { 
+                setImage(imageRightBow);
+            } else if (rotation >=131 && rotation <=220) {
+                setImage(imageLeftBow);
+            } else if (rotation >=51 && rotation <= 130) {
+                setImage(imageFrontBow);
+            } else if (rotation >=221 && rotation <=310) {
+                setImage(imageBackView);
+            } else {
+                setImage(imageRightBow);
+            }
+
+        } else if (weaponLevel == 2) {
+            if (rotation >=0 && rotation <= 50) { 
+                setImage(imageRightGunOne);
+            } else if (rotation >=131 && rotation <=220) {
+                setImage(imageLeftGunOne);
+            } else if (rotation >=51 && rotation <= 130) {
+                setImage(imageFrontGunOne);
+            } else if (rotation >=221 && rotation <=310) {
+                setImage(imageBackView);
+            } else {
+                setImage(imageRightGunOne);
+            }
+
+        } else if (weaponLevel == 3) {
+            if (rotation >=0 && rotation <= 50) {
+                setImage(imageRightGunTwo);
+            } else if (rotation >= 131 && rotation <=220) {
+                setImage(imageLeftGunTwo);
+            } else if (rotation >=51 && rotation <= 130) {
+                setImage(imageFrontGunTwo);
+            } else if (rotation >=221 && rotation <=310) {
+                setImage(imageBackView);
+            } else {
+                setImage(imageRightGunTwo);
+            }
+        }
+    }
 }
