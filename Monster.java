@@ -17,6 +17,7 @@ public class Monster extends Actor {
         health -= damage;
         if (health <= 0) {
             getWorld().removeObject(this);
+            Dungeon.killCounter++;
         }
     }
 }
