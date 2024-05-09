@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 public class Player extends Actor {
-    private int health;
+    public int health;
     private int coins;
     private int weaponLevel;
     private int ammo = 5;
@@ -117,20 +117,7 @@ public class Player extends Actor {
 
     public void loseHealth() {
         health--;
-        if (health == 4) {
-            // vymazání 5. obrázku srdce
-        }
-        if (health == 3) {
-            // vymazání 4. obrázku srdce
-        }
-        if (health == 2) {
-            // vymazání 3. obrázku srdce
-        }
-        if (health == 1) {
-            // vymazání 2. obrázku srdce
-        }
         if (health <= 0) {
-            // vymazání 1. obrázku srdce 
             die();
         }
     }
