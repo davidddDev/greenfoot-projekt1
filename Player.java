@@ -30,7 +30,7 @@ public class Player extends Actor {
             this.health = 1;
         }
         this.weaponLevel = 1;
-        this.coins = 20;
+        this.coins = 0;
 
         // obrázky
         setImage(imageFrontBow);
@@ -112,9 +112,10 @@ public class Player extends Actor {
         if (monster != null) {
             loseHealth();
             getWorld().removeObject(monster);
+            ((Dungeon)getWorld()).loseHealth();
         }
     }
-
+    
     public void loseHealth() {
         health--;
         if (health <= 0) {

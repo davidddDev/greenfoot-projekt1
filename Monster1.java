@@ -46,6 +46,7 @@ public class Monster1 extends Actor
             turnTowards(closest.getX(),closest.getY());
         }  
     }
+    
     public void shot()
     {
         Bullet intersectingBullet = (Bullet) getOneIntersectingObject(Bullet.class);
@@ -55,11 +56,13 @@ public class Monster1 extends Actor
             removeTouching(Bullet.class);
         }
     }
+    
     public void health()
     {
         if(lives == 0)
         {
             getWorld().removeObject(this);
+            Dungeon.killCounter++;
         }
     }
 }

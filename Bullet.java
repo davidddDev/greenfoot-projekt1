@@ -12,16 +12,6 @@ public class Bullet extends Actor {
         move(speed);
         if (isAtEdge()) {
             getWorld().removeObject(this);
-        } else {
-            checkHit();
-        }
-    }
-    
-    private void checkHit() {
-        Monster hit = (Monster)getOneIntersectingObject(Monster.class);
-        if (hit != null) {
-            hit.takeDamage(damage);
-            getWorld().removeObject(this);
         }
     }
 }
