@@ -25,7 +25,7 @@ public class Dungeon extends World {
     {
         if (killCounter >= 4)
         {
-            Greenfoot.setWorld(new Dungeon2());
+            Greenfoot.setWorld(new Dungeon2(0));
         }
     }
 

@@ -4,7 +4,7 @@ public class Player extends Actor {
     public int health;
     private int coins;
     private int weaponLevel;
-    private int ammo = 5;
+    private int ammo = 25;
     private int count = 0;
     // obrázky
     private GreenfootImage imageBackView;
