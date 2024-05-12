@@ -5,7 +5,7 @@ public class Player extends Actor {
     private int coins;
     private int weaponLevel;
     private int ammo = 5;
-
+    private int count = 0;
     // obrázky
     private GreenfootImage imageBackView;
     private GreenfootImage imageRightBow;
@@ -53,10 +53,13 @@ public class Player extends Actor {
     public void act() {
         moveAround();
         shoot();
-        checkCollision();
         checkForUpgrade();
         moveToMouse();
         updateImageBasedOnRotation();
+        count++;
+        if (count >= 20) {
+            checkCollision();
+        }
     }
 
     private void moveAround() {
@@ -112,6 +115,13 @@ public class Player extends Actor {
         if (monster != null) {
             loseHealth();
             getWorld().removeObject(monster);
+            ((Dungeon)getWorld()).loseHealth();
+        }
+        
+        Actor monster1 = getOneIntersectingObject(Monster1.class);
+        if (monster1 != null) {
+            loseHealth();
+            getWorld().removeObject(monster1);
             ((Dungeon)getWorld()).loseHealth();
         }
     }
