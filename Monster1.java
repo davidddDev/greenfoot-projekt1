@@ -10,6 +10,7 @@ public class Monster1 extends Actor
 {
     int speed;
     int lives;
+    int time;
     /**
      * Act - do whatever the Monster1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,6 +21,8 @@ public class Monster1 extends Actor
         move(speed);
         shot();
         health();
+        shooting();
+        time++;
     }
     public Monster1(int speed, int lives)
     {
@@ -54,6 +57,17 @@ public class Monster1 extends Actor
         {
             lives--;
             removeTouching(Bullet.class);
+        }
+    }
+    
+    public void shooting()
+    {
+        if (time >= 120)
+        {
+                MonsterBullet bullet = new MonsterBullet();
+                getWorld().addObject(bullet, getX(), getY());
+                bullet.setRotation(getRotation());
+                time = 0;
         }
     }
     
