@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Monster extends Actor {
+public class Monster2 extends Actor {
     int speed;
     int lives;
 
@@ -12,7 +12,7 @@ public class Monster extends Actor {
         health();
     }
     
-    public Monster(int speed, int lives)
+    public Monster2(int speed, int lives)
     {
         this.speed = speed; // Nastaví rychlost pohybu
         this.lives = lives; // Nastaví počet životů

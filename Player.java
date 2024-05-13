@@ -109,7 +109,7 @@ public class Player extends Actor {
     private void checkCollision() {
         World world = getWorld();
         if (world instanceof Dungeon) {
-            Actor monster = getOneIntersectingObject(Monster.class);
+            Actor monster = getOneIntersectingObject(Monster2.class);
             if (monster != null) {
                 loseHealth();
                 world.removeObject(monster);
@@ -125,7 +125,7 @@ public class Player extends Actor {
 
             
         } else if (world instanceof Dungeon2) {
-            Actor monster = getOneIntersectingObject(Monster.class);
+            Actor monster = getOneIntersectingObject(Monster2.class);
             if (monster != null) {
                 loseHealth();
                 world.removeObject(monster);
@@ -140,7 +140,7 @@ public class Player extends Actor {
             
             
         } else if (world instanceof Dungeon3) {
-            Actor monster = getOneIntersectingObject(Monster.class);
+            Actor monster = getOneIntersectingObject(Monster2.class);
             if (monster != null) {
                 loseHealth();
                 world.removeObject(monster);
@@ -155,7 +155,7 @@ public class Player extends Actor {
             
             
         } else if (world instanceof Dungeon4) {
-            Actor monster = getOneIntersectingObject(Monster.class);
+            Actor monster = getOneIntersectingObject(Monster2.class);
             if (monster != null) {
                 loseHealth();
                 world.removeObject(monster);
@@ -167,7 +167,84 @@ public class Player extends Actor {
                 world.removeObject(monster1);
                 ((Dungeon4)world).loseHealth();
             }
+        
+            
+        } else if (world instanceof Dungeon5) {
+            Actor monster = getOneIntersectingObject(Monster2.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon5)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon5)world).loseHealth();
+            }
+            
+        
+        } else if (world instanceof Dungeon6) {
+            Actor monster = getOneIntersectingObject(Monster2.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon6)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon6)world).loseHealth();
+            }
+            
+            
+        } else if (world instanceof Dungeon7) {
+            Actor monster = getOneIntersectingObject(Monster2.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon7)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon7)world).loseHealth();
+            }
+            
+            
+        } else if (world instanceof Dungeon8) {
+            Actor monster = getOneIntersectingObject(Monster2.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon8)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon8)world).loseHealth();
+            }
+            
+            
+        } else if (world instanceof Dungeon9) {
+            Actor monster = getOneIntersectingObject(Monster2.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon9)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon9)world).loseHealth();
+            }
+            
         } 
+        
         
     }
 

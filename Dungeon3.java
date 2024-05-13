@@ -8,9 +8,9 @@ public class Dungeon3 extends World {
         super(600, 600, 1);
         player = new Player(difficulty);
         addObject(player, getHeight()/2, getWidth()/2);
-        addObject(new Monster(2,1), 100, 200);
+        addObject(new Monster2(2,1), 100, 200);
         addObject(new Monster1(1,2), 550, 500);
-        addObject(new Monster(2,1), 500, 150);
+        addObject(new Monster2(2,1), 500, 150);
         addObject(new Monster1(1,2), 100, 550);
     }
 
