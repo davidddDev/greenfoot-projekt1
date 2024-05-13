@@ -1,7 +1,6 @@
 import greenfoot.*;
 
 public class Dungeon2 extends World {
-
     private Player player;
     private HealthBar healthBar;
     public static int killCounter = 0;
@@ -25,7 +24,7 @@ public class Dungeon2 extends World {
     {
         if (killCounter >= 4)
         {
-            Greenfoot.setWorld(new Dungeon3());
+            Greenfoot.setWorld(new Dungeon3(4));
         }
     }
 
@@ -36,7 +35,7 @@ public class Dungeon2 extends World {
     public Player getPlayer() {
         return player;
     }
-
+    
     public void loseHealth()
     {
         healthBar.loseHealth();

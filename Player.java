@@ -5,7 +5,6 @@ public class Player extends Actor {
     private int coins;
     private int weaponLevel;
     private int ammo = 25;
-    private int count = 0;
     // obrázky
     private GreenfootImage imageBackView;
     private GreenfootImage imageRightBow;
@@ -33,7 +32,6 @@ public class Player extends Actor {
         this.coins = 0;
 
         // obrázky
-        setImage(imageFrontBow);
         imageBackView = new GreenfootImage("player-backview.png");
         imageFrontBow = new GreenfootImage("player-bow-frontview.png");
         imageLeftBow = new GreenfootImage("player-bow-leftview.png");
@@ -46,6 +44,7 @@ public class Player extends Actor {
         imageFrontGunTwo = new GreenfootImage("player-gun2-frontview.png");
         imageRightGunTwo = new GreenfootImage("player-gun2-rightview.png");
         imageLeftGunTwo = new GreenfootImage("player-gun2-leftview.png");
+        setImage(imageFrontBow);
         //obrázky 
 
     }
@@ -56,10 +55,7 @@ public class Player extends Actor {
         checkForUpgrade();
         moveToMouse();
         updateImageBasedOnRotation();
-        count++;
-        if (count >= 20) {
-            checkCollision();
-        }
+        checkCollision();
     }
 
     private void moveAround() {
@@ -111,21 +107,70 @@ public class Player extends Actor {
     }
 
     private void checkCollision() {
-        Actor monster = getOneIntersectingObject(Monster.class);
-        if (monster != null) {
-            loseHealth();
-            getWorld().removeObject(monster);
-            ((Dungeon)getWorld()).loseHealth();
-        }
+        World world = getWorld();
+        if (world instanceof Dungeon) {
+            Actor monster = getOneIntersectingObject(Monster.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon)world).loseHealth();
+
+            }
+
+            
+        } else if (world instanceof Dungeon2) {
+            Actor monster = getOneIntersectingObject(Monster.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon2)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon2)world).loseHealth();
+            }
+            
+            
+        } else if (world instanceof Dungeon3) {
+            Actor monster = getOneIntersectingObject(Monster.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon3)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon3)world).loseHealth();
+            }
+            
+            
+        } else if (world instanceof Dungeon4) {
+            Actor monster = getOneIntersectingObject(Monster.class);
+            if (monster != null) {
+                loseHealth();
+                world.removeObject(monster);
+                ((Dungeon4)world).loseHealth();
+            }
+            Actor monster1 = getOneIntersectingObject(Monster1.class);
+            if (monster1 != null) {
+                loseHealth();
+                world.removeObject(monster1);
+                ((Dungeon4)world).loseHealth();
+            }
+        } 
         
-        Actor monster1 = getOneIntersectingObject(Monster1.class);
-        if (monster1 != null) {
-            loseHealth();
-            getWorld().removeObject(monster1);
-            ((Dungeon)getWorld()).loseHealth();
-        }
     }
-    
+
     public void loseHealth() {
         health--;
         if (health <= 0) {
