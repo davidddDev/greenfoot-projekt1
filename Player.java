@@ -25,7 +25,7 @@ public class Player extends Actor {
             this.health = 5;
         } else if (difficulty == 2) {
             this.health = 3;
-        } else {
+        } else if (difficulty == 3) {
             this.health = 1;
         }
         this.weaponLevel = 1;

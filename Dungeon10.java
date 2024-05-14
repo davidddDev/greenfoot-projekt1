@@ -1,11 +1,5 @@
 import greenfoot.*;
 
-/**
- * Write a description of class Dungeon10 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Dungeon10 extends World
 {
     private Player player;
