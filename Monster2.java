@@ -48,10 +48,61 @@ public class Monster2 extends Actor {
     }
     public void health()
     {
-        if(lives == 0)
-        {
-            getWorld().removeObject(this);
-            Dungeon.killCounter++;
-        }
+        World world = getWorld();
+        if (world instanceof Dungeon) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon.killCounter++;
+            }
+        } else if (world instanceof Dungeon2) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon2.killCounter++;
+            }
+        } else if (world instanceof Dungeon3) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon3.killCounter++;
+            }
+        } else if (world instanceof Dungeon4) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon4.killCounter++;
+            }
+        } else if (world instanceof Dungeon5) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon5.killCounter++;
+            }
+        } else if (world instanceof Dungeon6) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon6.killCounter++;
+            }
+        } else if (world instanceof Dungeon7) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon7.killCounter++;
+            }
+        } else if (world instanceof Dungeon8) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon8.killCounter++;
+            }            
+        } else if (world instanceof Dungeon9) {
+            if(lives == 0)
+            {
+                getWorld().removeObject(this);
+                Dungeon9.killCounter++;
+            }
+        } 
     }
 }

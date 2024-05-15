@@ -7,11 +7,11 @@ public class Dungeon3 extends World {
     public Dungeon3(int difficulty, int initialHealth) {
         super(600, 600, 1);
         player = new Player(difficulty);
-        addObject(player, getHeight()/2, getWidth()/2);
-        addObject(new Monster2(2,1), 100, 200);
-        addObject(new Monster1(1,2), 550, 500);
-        addObject(new Monster2(2,1), 500, 150);
-        addObject(new Monster1(1,2), 100, 550);
+        addObject(player, 100, 500);
+        addObject(new Monster2(1,1), 100, 200);
+        addObject(new Monster1(1,1), 550, 500);
+        addObject(new Monster2(1,1), 500, 150);
+        addObject(new Monster1(1,1), 300, 250);
     }
 
     public Dungeon3(int initialHealth) {
@@ -25,6 +25,7 @@ public class Dungeon3 extends World {
         if (killCounter >= 4)
         {
             Greenfoot.setWorld(new Dungeon4(3));
+            killCounter = 0;
         }
     }
 

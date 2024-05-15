@@ -4,7 +4,7 @@ public class Player extends Actor {
     public int health;
     private int coins;
     private int weaponLevel;
-    private int ammo = 25;
+    private int ammo = 100;
     // obrázky
     private GreenfootImage imageBackView;
     private GreenfootImage imageRightBow;
@@ -297,7 +297,6 @@ public class Player extends Actor {
             }
         } 
         
-        
     }
 
     public void loseHealth() {
@@ -312,7 +311,7 @@ public class Player extends Actor {
     }
 
     private void checkForUpgrade() {
-        if (Greenfoot.isKeyDown("u") && coins >= 10) { // zmáčknout u na up grade zbraně
+        if (Greenfoot.isKeyDown("u") && coins >= 10) { // zmáčknout u na upgrade zbraně
             weaponLevel++;
             coins -= 10;
         }
