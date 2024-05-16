@@ -7,22 +7,23 @@ public class Dungeon10 extends World
     public static int killCounter = 0;
     public Dungeon10(int difficulty, int initialHealth) {
         super(600, 600, 1);
-        player = new Player(difficulty);
+        player = new Player(difficulty, initialHealth);
         addObject(player, getHeight()/2, getWidth()/2);
         addObject(new Boss(), 100, 200);
-    }
-
-    public Dungeon10(int initialHealth) {
-        this(1, initialHealth);
         healthBar = new HealthBar(initialHealth);
         addObject(healthBar, 125, 30);
     }
 
+    public Dungeon10(int initialHealth) {
+        this(1, initialHealth);
+        
+    }
+
     public void nextDungeon()
     {
-        if (killCounter >= 1)
+        if (killCounter == 1)
         {
-            // nějaký text třeba
+            showText("Zvítězil jsi!", getWidth() / 2, getHeight() / 2);
             Greenfoot.stop();
         }
     }

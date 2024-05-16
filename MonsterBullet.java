@@ -14,7 +14,7 @@ public class MonsterBullet extends Actor
      */
     public void act()
     {
-        move(4);
+        move(2);
         if (isAtEdge())
         {
             getWorld().removeObject(this);

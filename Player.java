@@ -20,7 +20,7 @@ public class Player extends Actor {
     private GreenfootImage imageLeftGunTwo;
     // obrázky 
 
-    public Player(int difficulty) {
+    public Player(int difficulty, int initialHealth) {
         if (difficulty == 1) {
             this.health = 5;
         } else if (difficulty == 2) {
@@ -28,6 +28,7 @@ public class Player extends Actor {
         } else if (difficulty == 3) {
             this.health = 1;
         }
+        this.health = initialHealth;
         this.weaponLevel = 1;
         this.coins = 0;
 

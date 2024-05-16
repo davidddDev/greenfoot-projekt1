@@ -7,25 +7,25 @@ public class Dungeon9 extends World
     public static int killCounter = 0;
     public Dungeon9(int difficulty, int initialHealth) {
         super(600, 600, 1);
-        player = new Player(difficulty);
+        player = new Player(difficulty, initialHealth);
         addObject(player, 100, 500);
         addObject(new Monster2(1,1), 100, 200);
         addObject(new Monster1(1,1), 550, 500);
         addObject(new Monster2(1,1), 500, 150);
         addObject(new Monster1(1,1), 300, 250);
+        healthBar = new HealthBar(initialHealth);
+        addObject(healthBar, 125, 30);
     }
 
     public Dungeon9(int initialHealth) {
         this(1, initialHealth);
-        healthBar = new HealthBar(initialHealth);
-        addObject(healthBar, 125, 30);
     }
 
     public void nextDungeon()
     {
         if (killCounter >= 4)
         {
-            Greenfoot.setWorld(new Dungeon10(3));
+            Greenfoot.setWorld(new Dungeon10(1, player.getHealth()));
             killCounter = 0;
         }
     }
@@ -37,7 +37,7 @@ public class Dungeon9 extends World
     public Player getPlayer() {
         return player;
     }
-    
+
     public void loseHealth()
     {
         healthBar.loseHealth();
