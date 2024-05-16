@@ -9,9 +9,9 @@ public class Dungeon8 extends World
         super(600, 600, 1);
         player = new Player(difficulty, initialHealth);
         addObject(player, 100, 500);
-        addObject(new Monster2(0,1), 100, 200);
+        addObject(new Monster2(1), 100, 200);
         addObject(new Monster1(1,1), 550, 500);
-        addObject(new Monster2(0,1), 500, 150);
+        addObject(new Monster2(1), 500, 150);
         addObject(new Monster1(1,1), 300, 250);
         healthBar = new HealthBar(initialHealth);
         addObject(healthBar, 125, 30);

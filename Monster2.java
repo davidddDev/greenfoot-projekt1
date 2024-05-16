@@ -1,22 +1,19 @@
 import greenfoot.*;
 
 public class Monster2 extends Actor {
-    int speed;
     int lives;
     int time;
     public void act()
     {
         followPlayer();
-        move(speed);
         shot();
         health();
         shooting();
         time++;
     }
     
-    public Monster2(int speed, int lives)
+    public Monster2(int lives)
     {
-        this.speed = speed; // Nastaví rychlost pohybu
         this.lives = lives; // Nastaví počet životů
     }
     private void followPlayer()
