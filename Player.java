@@ -296,8 +296,21 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon9)world).loseHealth();
             }
+            
+            
+        } else if (world instanceof Dungeon10) {
+            Actor boss = getOneIntersectingObject(Boss.class);
+            if (boss != null) {
+                loseHealth();
+                ((Dungeon10)world).loseHealth();
+            }
+            Actor bullet = getOneIntersectingObject(MonsterBullet.class);
+            if (bullet != null) {
+                loseHealth();
+                world.removeObject(bullet);
+                ((Dungeon8)world).loseHealth();
+            }  
         } 
-        
     }
 
     public void loseHealth() {
