@@ -3,13 +3,15 @@ import greenfoot.*;
 public class Monster2 extends Actor {
     int speed;
     int lives;
-
+    int time;
     public void act()
     {
         followPlayer();
         move(speed);
         shot();
         health();
+        shooting();
+        time++;
     }
     
     public Monster2(int speed, int lives)
@@ -36,6 +38,16 @@ public class Monster2 extends Actor {
             }
             turnTowards(closest.getX(),closest.getY());
         }  
+    }
+    public void shooting()
+    {
+        if (time >= 120)
+        {
+            MonsterBullet bullet = new MonsterBullet();
+            getWorld().addObject(bullet, getX(), getY());
+            bullet.setRotation(getRotation());
+            time = 0;
+        }
     }
     public void shot()
     {
