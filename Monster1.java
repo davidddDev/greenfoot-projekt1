@@ -21,16 +21,18 @@ public class Monster1 extends Actor
         shot();
         health();
     }
+
     public Monster1(int speed, int lives)
     {
         this.speed = speed; // Nastaví rychlost pohybu
         this.lives = lives; // Nastaví počet životů
     }
+
     private void followPlayer()
     {
         int distance = 1000;
         Actor closest = null;
-         
+
         if(!getObjectsInRange(distance, Player.class).isEmpty())
         {
             for (Object obj: getObjectsInRange(distance, Player.class))
@@ -46,7 +48,7 @@ public class Monster1 extends Actor
             turnTowards(closest.getX(),closest.getY());
         }  
     }
-    
+
     public void shot()
     {
         Bullet intersectingBullet = (Bullet) getOneIntersectingObject(Bullet.class);
@@ -63,57 +65,67 @@ public class Monster1 extends Actor
         if (world instanceof Dungeon) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon.killCounter++;
             }
         } else if (world instanceof Dungeon2) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon2.killCounter++;
             }
         } else if (world instanceof Dungeon3) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon3.killCounter++;
             }
         } else if (world instanceof Dungeon4) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon4.killCounter++;
             }
         } else if (world instanceof Dungeon5) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon5.killCounter++;
             }
         } else if (world instanceof Dungeon6) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon6.killCounter++;
             }
         } else if (world instanceof Dungeon7) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon7.killCounter++;
             }
         } else if (world instanceof Dungeon8) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon8.killCounter++;
             }            
         } else if (world instanceof Dungeon9) {
             if(lives == 0)
             {
+                
                 getWorld().removeObject(this);
                 Dungeon9.killCounter++;
             }
+            
         } 
     }
 }

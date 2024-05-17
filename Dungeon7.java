@@ -8,11 +8,11 @@ public class Dungeon7 extends World
     public Dungeon7(int difficulty, int initialHealth) {
         super(600, 600, 1);
         player = new Player(difficulty, initialHealth);
-        addObject(player, 100, 500);
-        addObject(new Monster2(1), 100, 200);
-        addObject(new Monster1(1,1), 550, 500);
-        addObject(new Monster2(1), 500, 150);
-        addObject(new Monster1(1,1), 300, 250);
+        addObject(player, 300, 525);
+        addObject(new Monster2(2), 100, 100);
+        addObject(new Monster1(1,1), 100, 200);
+        addObject(new Monster2(2), 500, 100);
+        addObject(new Monster1(1,1), 500, 200);
         healthBar = new HealthBar(initialHealth);
         addObject(healthBar, 125, 30);
     }

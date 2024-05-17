@@ -5,7 +5,7 @@ public class Bullet extends Actor {
     
     public Bullet(int rotation, int weaponLevel) {
         setRotation(rotation);
-        this.damage = 2 * weaponLevel; // Damage increases with weapon level
+        this.damage = 2 * weaponLevel; 
     }
     
     public void act() {

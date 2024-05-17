@@ -121,6 +121,7 @@ public class Player extends Actor {
                 loseHealth();
                 world.removeObject(monster1);
                 ((Dungeon)world).loseHealth();
+
             }
             Actor bullet = getOneIntersectingObject(MonsterBullet.class);
             if (bullet != null) {
@@ -128,8 +129,6 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon)world).loseHealth();
             }
-            
-            
         } else if (world instanceof Dungeon2) {
             Actor monster2 = getOneIntersectingObject(Monster2.class);
             if (monster2 != null) {
@@ -142,6 +141,7 @@ public class Player extends Actor {
                 loseHealth();
                 world.removeObject(monster1);
                 ((Dungeon2)world).loseHealth();
+                addCoins(5);
             }
             Actor bullet = getOneIntersectingObject(MonsterBullet.class);
             if (bullet != null) {
@@ -308,8 +308,8 @@ public class Player extends Actor {
             if (bullet != null) {
                 loseHealth();
                 world.removeObject(bullet);
-                ((Dungeon8)world).loseHealth();
-            }  
+                ((Dungeon10)world).loseHealth();
+            }
         } 
     }
 
