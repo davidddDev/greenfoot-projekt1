@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class Player extends Actor {
     public int health;
-    private int coins;
+    public static int coins;
     private int weaponLevel;
     private int ammo = 100;
     // obrázky

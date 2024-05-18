@@ -65,7 +65,10 @@ public class Monster1 extends Actor
         if (world instanceof Dungeon) {
             if(lives == 0)
             {
-                
+                if (Greenfoot.getRandomNumber(10) <= 2)
+                {
+                    Player.coins += 2;
+                }
                 getWorld().removeObject(this);
                 Dungeon.killCounter++;
             }
