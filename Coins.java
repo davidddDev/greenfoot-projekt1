@@ -1,19 +1,19 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class Coins here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Coins extends Actor
-{
-    /**
-     * Act - do whatever the Coins wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+public class Coins extends Actor {
+    private int score;
+    
+    public Coins(int initialScore) {
+        score = initialScore;
+        setImage(new GreenfootImage("Coins: " + score, 30, Color.BLACK, Color.WHITE));
+    }
+    
+    public void addCoins(int amount) {
+        score += amount;
+        setImage(new GreenfootImage("Coins: " + score, 30, Color.BLACK, Color.WHITE));
+    }
+
+    public void act() {
+        setImage(new GreenfootImage("Coins: " + score, 30, Color.BLACK, Color.WHITE));
     }
 }
