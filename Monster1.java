@@ -19,6 +19,7 @@ public class Monster1 extends Actor
         followPlayer();
         move(speed);
         shot();
+        if (getWorld() == null) return;
         health();
     }
 

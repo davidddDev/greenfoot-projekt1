@@ -12,12 +12,12 @@ public class Dungeon6 extends World {
         coins = new Coins(Dungeon.getTotalCoins()); 
         
         addObject(player, 75, 300);
-        addObject(new Monster2(2), 500, 100);
-        addObject(new Monster1(1,1), 400, 100);
-        addObject(new Monster2(2), 500, 500);
-        addObject(new Monster1(1,1), 400, 500);
-        addObject(new Mine(), 200, 300);
-        addObject(new Mine(), 300, 200);
+        addObject(new Monster2(3), 500, 100);
+        addObject(new Monster1(1,2), 400, 100);
+        addObject(new Monster2(3), 500, 500);
+        addObject(new Monster1(1,2), 400, 500);
+        addObject(new Mine2(), 200, 300);
+        addObject(new Mine2(), 300, 200);
         healthBar = new HealthBar(initialHealth);
         addObject(healthBar, 125, 30);
         addObject(coins, 75, 75);

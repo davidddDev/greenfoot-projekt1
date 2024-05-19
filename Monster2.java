@@ -7,6 +7,7 @@ public class Monster2 extends Actor {
     {
         followPlayer();
         shot();
+        if (getWorld() == null) return;
         health();
         shooting();
         time++;

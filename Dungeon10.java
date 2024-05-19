@@ -10,6 +10,10 @@ public class Dungeon10 extends World
         player = new Player(difficulty, initialHealth);
         addObject(player, 300, 75);
         addObject(new Boss(1,20), 300, 525);
+        addObject(new Mine2(), 500, 100);
+        addObject(new Mine2(), 100, 100);
+        addObject(new Mine2(), 100, 500);
+        addObject(new Mine2(), 500, 500);
         healthBar = new HealthBar(initialHealth);
         addObject(healthBar, 125, 30);
     }

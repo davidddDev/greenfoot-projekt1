@@ -229,7 +229,7 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon5)world).loseHealth();
             }            
-            Actor mine = getOneIntersectingObject(Mine.class);
+            Actor mine = getOneIntersectingObject(Mine2.class);
             if (mine != null) {
                 loseHealth();
                 world.removeObject(mine);
@@ -254,7 +254,7 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon6)world).loseHealth();
             }            
-            Actor mine = getOneIntersectingObject(Mine.class);
+            Actor mine = getOneIntersectingObject(Mine2.class);
             if (mine != null) {
                 loseHealth();
                 world.removeObject(mine);
@@ -279,7 +279,7 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon7)world).loseHealth();
             }            
-            Actor mine = getOneIntersectingObject(Mine.class);
+            Actor mine = getOneIntersectingObject(Mine2.class);
             if (mine != null) {
                 loseHealth();
                 world.removeObject(mine);
@@ -304,7 +304,7 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon8)world).loseHealth();
             }            
-            Actor mine = getOneIntersectingObject(Mine.class);
+            Actor mine = getOneIntersectingObject(Mine2.class);
             if (mine != null) {
                 loseHealth();
                 world.removeObject(mine);
@@ -329,7 +329,7 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon9)world).loseHealth();
             }
-            Actor mine = getOneIntersectingObject(Mine.class);
+            Actor mine = getOneIntersectingObject(Mine2.class);
             if (mine != null) {
                 loseHealth();
                 world.removeObject(mine);
@@ -347,7 +347,7 @@ public class Player extends Actor {
                 world.removeObject(bullet);
                 ((Dungeon10)world).loseHealth();
             }
-            Actor mine = getOneIntersectingObject(Mine.class);
+            Actor mine = getOneIntersectingObject(Mine2.class);
             if (mine != null) {
                 loseHealth();
                 world.removeObject(mine);
