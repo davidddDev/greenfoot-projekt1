@@ -1,16 +1,15 @@
 import greenfoot.*;
 
 public class Dungeon extends World {
-    private static int totalCoins = 0;
     private Coins coins;
     private Player player;  
     private HealthBar healthBar;
     public static int killCounter = 0;
-
+    
     public Dungeon(int difficulty, int initialHealth) {
         super(600, 600, 1);
         player = new Player(difficulty, initialHealth);
-        coins = new Coins(totalCoins); 
+        coins = new Coins(Coins.score); 
         addObject(player, 300, 75);
         addObject(new Monster2(2), 100, 500);
         addObject(new Monster1(1,1), 100, 400);
@@ -25,14 +24,6 @@ public class Dungeon extends World {
     
     public Dungeon(int initialHealth) {
         this(1, initialHealth);
-    }
-    
-    public static void addCoins(int amount) {
-        totalCoins += amount;
-    }
-
-    public static int getTotalCoins() {
-        return totalCoins;
     }
     
     public Coins getCoins() {

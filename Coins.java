@@ -1,7 +1,7 @@
 import greenfoot.*;  
 
 public class Coins extends Actor {
-    private int score;
+    public static int score;
     
     public Coins(int initialScore) {
         score = initialScore;

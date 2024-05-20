@@ -9,7 +9,7 @@ public class Dungeon3 extends World {
     public Dungeon3(int difficulty, int initialHealth) {
         super(600, 600, 1);
         player = new Player(difficulty, initialHealth);
-        coins = new Coins(Dungeon.getTotalCoins()); 
+        coins = new Coins(Coins.score); 
         
         addObject(player, 300, 525);
         addObject(new Monster2(2), 100, 100);
@@ -26,7 +26,7 @@ public class Dungeon3 extends World {
     public Dungeon3(int initialHealth) {
         this(1, initialHealth);
     }
-
+    
     public void nextDungeon() {
         if (killCounter >= 4) {
             Greenfoot.setWorld(new Dungeon4(1, player.getHealth()));

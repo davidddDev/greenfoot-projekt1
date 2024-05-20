@@ -67,7 +67,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon)world).getCoins().addCoins(1);
+                        ((Dungeon)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon.killCounter++;
@@ -76,7 +76,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon2)world).getCoins().addCoins(1);
+                        ((Dungeon2)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon2.killCounter++;
@@ -85,7 +85,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon3)world).getCoins().addCoins(1);
+                        ((Dungeon3)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon3.killCounter++;
@@ -94,7 +94,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon4)world).getCoins().addCoins(1);
+                        ((Dungeon4)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon4.killCounter++;
@@ -103,7 +103,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon5)world).getCoins().addCoins(1);
+                        ((Dungeon5)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon5.killCounter++;
@@ -112,7 +112,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon6)world).getCoins().addCoins(1);
+                        ((Dungeon6)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon6.killCounter++;
@@ -121,7 +121,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon7)world).getCoins().addCoins(1);
+                        ((Dungeon7)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon7.killCounter++;
@@ -130,7 +130,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon8)world).getCoins().addCoins(1);
+                        ((Dungeon8)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon8.killCounter++;
@@ -139,7 +139,7 @@ public class Monster2 extends Actor {
                 if(lives == 0)
                 {
                     if (Greenfoot.getRandomNumber(100) < 50) {
-                        ((Dungeon9)world).getCoins().addCoins(1);
+                        ((Dungeon9)world).getCoins().addCoins(2);
                     }
                     getWorld().removeObject(this);
                     Dungeon9.killCounter++;

@@ -2,7 +2,6 @@ import greenfoot.*;
 
 public class Player extends Actor {
     public int health;
-    public static int coins;
     private int weaponLevel;
     private int ammo = 100;
     // obrázky
@@ -30,7 +29,6 @@ public class Player extends Actor {
         }
         this.health = initialHealth;
         this.weaponLevel = 1;
-        this.coins = 0;
 
         // obrázky
         imageBackView = new GreenfootImage("player-backview.png");
@@ -364,22 +362,15 @@ public class Player extends Actor {
     }
 
     private void die() {
+        Coins.score = 0;
         Greenfoot.stop();
     }
 
     private void checkForUpgrade() {
-        if (Greenfoot.isKeyDown("u") && coins >= 10) { // zmáčknout u na upgrade zbraně
+        if (Greenfoot.isKeyDown("u") && Coins.score >= 10) { // zmáčknout u na upgrade zbraně
             weaponLevel++;
-            coins -= 10;
+            Coins.score -= 10;
         }
-    }
-
-    public int getCoins() {
-        return coins;
-    }
-
-    public void addCoins(int amount) {
-        coins += amount;
     }
 
     public int getHealth() {

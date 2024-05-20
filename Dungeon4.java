@@ -9,7 +9,7 @@ public class Dungeon4 extends World {
     public Dungeon4(int difficulty, int initialHealth) {
         super(600, 600, 1);
         player = new Player(difficulty, initialHealth);
-        coins = new Coins(Dungeon.getTotalCoins()); 
+        coins = new Coins(Coins.score); 
         
         addObject(player, 525, 300);
         addObject(new Monster2(3), 100, 100);
