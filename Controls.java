@@ -9,10 +9,10 @@ public class Controls extends World {
 
     private void prepare() {
         GreenfootImage bg = getBackground();
-        bg.setColor(Color.WHITE);
-        bg.setFont(new Font("Arial", false, false, 24));
+        bg.setColor(new Color(193, 133, 98, 200));
+        bg.setFont(new Font("Arial Bold", false, false, 20));
         bg.drawString("Controls:", 250, 100);
-        bg.drawString("W - Move up", 100, 150);
+        bg.drawString("W - Move up", 98, 150);
         bg.drawString("A - Move left", 100, 180);
         bg.drawString("S - Move down", 100, 210);
         bg.drawString("D - Move right", 100, 240);
