@@ -10,7 +10,6 @@ public class Dungeon3 extends World {
         super(600, 600, 1);
         player = new Player(difficulty, initialHealth);
         coins = new Coins(Coins.score); 
-        
         addObject(player, 300, 525);
         addObject(new Monster2(2), 100, 100);
         addObject(new Monster1(1,1), 100, 200);

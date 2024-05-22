@@ -5,8 +5,7 @@ public class Boss extends Actor {
     int speed;
     int lives;
 
-    public Boss(int speed, int lives)
-    {
+    public Boss(int speed, int lives) {
         this.speed = speed; // Nastaví rychlost pohybu
         this.lives = lives; // Nastaví počet životů
     }
@@ -20,19 +19,14 @@ public class Boss extends Actor {
         time++;
     }
 
-    private void followPlayer()
-    {
+    private void followPlayer() {
         int distance = 1000;
         Actor closest = null;
-
-        if(!getObjectsInRange(distance, Player.class).isEmpty())
-        {
-            for (Object obj: getObjectsInRange(distance, Player.class))
-            {
+        if(!getObjectsInRange(distance, Player.class).isEmpty()) {
+            for (Object obj: getObjectsInRange(distance, Player.class)) {
                 Actor player = (Actor) obj;
                 int playerDistance = (int) Math.hypot(player.getX() - getX(), player.getY() - getY());
-                if (closest == null || playerDistance< distance)
-                {
+                if (closest == null || playerDistance< distance) {
                     closest = player;
                     distance = playerDistance;
                 }
@@ -41,20 +35,16 @@ public class Boss extends Actor {
         }  
     }
 
-    public void shot()
-    {
+    public void shot() {
         Bullet intersectingBullet = (Bullet) getOneIntersectingObject(Bullet.class);
-        if (intersectingBullet != null)
-        {
+        if (intersectingBullet != null) {
             lives--;
             removeTouching(Bullet.class);
         }
     }
 
-    public void shooting()
-    {
-        if (time >= 75)
-        {
+    public void shooting() {
+        if (time >= 75) {
             MonsterBullet bullet = new MonsterBullet();
             getWorld().addObject(bullet, getX(), getY());
             bullet.setRotation(getRotation());
@@ -65,8 +55,7 @@ public class Boss extends Actor {
     public void health() {
         World world = getWorld();
         if (world instanceof Dungeon10) {
-            if(lives == 0)
-            {
+            if(lives == 0) {
                 getWorld().removeObject(this);
                 Dungeon10.killCounter++;
             }

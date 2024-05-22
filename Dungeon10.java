@@ -9,7 +9,7 @@ public class Dungeon10 extends World
         super(600, 600, 1);
         player = new Player(difficulty, initialHealth);
         addObject(player, 300, 75);
-        addObject(new Boss(1,20), 300, 525);
+        addObject(new Boss(1,30), 300, 525);
         addObject(new Mine2(), 500, 100);
         addObject(new Mine2(), 100, 100);
         addObject(new Mine2(), 100, 500);
@@ -20,13 +20,10 @@ public class Dungeon10 extends World
 
     public Dungeon10(int initialHealth) {
         this(1, initialHealth);
-        
     }
 
-    public void nextDungeon()
-    {
-        if (killCounter == 1)
-        {
+    public void nextDungeon() {
+        if (killCounter == 1) {
             showText("Zvítězil jsi!", getWidth() / 2, getHeight() / 2);
             Greenfoot.stop();
         }
@@ -40,8 +37,7 @@ public class Dungeon10 extends World
         return player;
     }
     
-    public void loseHealth()
-    {
+    public void loseHealth() {
         healthBar.loseHealth();
     }
 }

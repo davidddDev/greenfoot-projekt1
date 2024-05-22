@@ -93,14 +93,10 @@ public class Player extends Actor {
         }
     }
 
-    public boolean munition()
-    {
-        if(ammo > 0)
-        {
+    public boolean munition() {
+        if(ammo > 0) {
             return true;
-        }
-        else 
-        {
+        } else {
             return false;
         }
     }
@@ -132,7 +128,7 @@ public class Player extends Actor {
                 loseHealth();
                 world.removeObject(mine);
                 ((Dungeon)world).loseHealth();
-            }            
+            }
         } else if (world instanceof Dungeon2) {
             Actor monster2 = getOneIntersectingObject(Monster2.class);
             if (monster2 != null) {
@@ -379,8 +375,7 @@ public class Player extends Actor {
 
     private void updateImageBasedOnRotation() { // obrázky postavy (měnění podle úhlu pohledu) 
         int rotation = getRotation();
-        if (weaponLevel == 1)
-        {
+        if (weaponLevel == 1) {
             if (rotation >=0 && rotation <= 50) { 
                 setImage(imageRightBow);
             } else if (rotation >=131 && rotation <=220) {

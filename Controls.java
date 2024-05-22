@@ -1,7 +1,6 @@
 import greenfoot.*;
 
 public class Controls extends World {
-
     public Controls() {
         super(600, 600, 1);
         prepare();

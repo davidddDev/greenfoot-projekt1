@@ -1,7 +1,6 @@
 import greenfoot.*;
 
 public class MainMenu extends World {
-    
     public MainMenu() {
         super(600, 600, 1);
         prepare();
