@@ -16,7 +16,7 @@ public class Controls extends World {
         bg.drawString("S - Move down", 100, 210);
         bg.drawString("D - Move right", 100, 240);
         bg.drawString("U - Upgrade gun (if coins >= 10)", 100, 270);
-        bg.drawString("LMB - Shoot", 100, 300);
+        bg.drawString("LMB (Left Mouse Button) - Shoot", 100, 300);
         bg.drawString("Chance to get coins = 50%", 100, 370);
         bg.drawString("Crawler = 1 coin", 100, 400);
         bg.drawString("Shooter = 2 coins", 100, 430);
